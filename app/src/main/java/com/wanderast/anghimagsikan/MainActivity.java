@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayoutManager layoutManager;
 
-    Button nextButton;
+    Button nextButton, restartButton;
+
     private ArrayList<Scenario> scenarios = new ArrayList<Scenario>();
     private Player player;
 
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         mainDialog = findViewById(R.id.scenario);
 
         nextButton = findViewById(R.id.next_button);
+        restartButton = findViewById(R.id.restart_button);
 
         // set up the player
         player = new Player("Tonton");
@@ -86,14 +88,18 @@ public class MainActivity extends AppCompatActivity {
         listRecycler.setAdapter(choiceAdapter);
         choiceAdapter.notifyDataSetChanged();
 
+        restartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                restartGame();
+            }
+        });
+
         // set initial dialog
-        mainDialog.setText(scenarios.get(scenarioCount).text);
+        update();
     }
 
     public void update(){
-        // do consequence here
-        scenarioCount++;
-
         // update player stats
 //        player.updatePlayer("health", -1, 10);
 
@@ -111,7 +117,16 @@ public class MainActivity extends AppCompatActivity {
         else{
             mainDialog.setText(getString(R.string.game_over));
             listRecycler.setVisibility(View.GONE);
+            restartButton.setVisibility(View.VISIBLE);
         }
 
+        // iterate scenario movement
+        scenarioCount++;
+    }
+
+    public void restartGame(){
+        scenarioCount=0;
+        listRecycler.setVisibility(View.VISIBLE);
+        update();
     }
 }

@@ -23,4 +23,5 @@
     <string name="choice3_3">Choice 3.3</string>
 
     <string name="game_over">Game Over!</string>
+    <string name="restart">Restart Game</string>
 </resources>
