@@ -46,26 +46,29 @@ public class MainActivity extends AppCompatActivity {
         playerName.setText("Manlalaro: " + player.name);
         playerHealth.setText("Buhay: "+ player.health +"/100");
 
+        // initialize scene 1
         Scenario scene = new Scenario();
-        scene.text = "'Magandang gabi' bati ng isang malaking lalaki. Siya ay nakaupo sa harap ng pasukan patungo sa kweba. " +
-                "Ikaw ay nasindak ngunit inabot ka ng isang linggo upang makarating sa kweba na ito kung saan magaganap " +
-                "ang inyong pagtitipon upang simulan ang himagsikan...";
-        scene.choiceCount = 3;
+        scene.text = getString(R.string.scenario1);
 
         // adding choices to scene 1
         scene.addChoice(getString(R.string.choice1_1));
         scene.addChoice(getString(R.string.choice1_2));
         scene.addChoice(getString(R.string.choice1_3));
 
+        // initialize scene 2
         Scenario scene2 = new Scenario();
-        scene2.text = "Nagulat din siya sa pagtakbo mo at pinutukan ka ng baril, ito ay dumaplis sa iyong balikat ngunit ikaw ay"+
-        "nasaktan ng malubha";
+        scene2.text = getString(R.string.scenario2);
+
+        // addding choices to scene 2
         scene2.addChoice(getString(R.string.choice2_1));
         scene2.addChoice(getString(R.string.choice2_2));
         scene2.addChoice(getString(R.string.choice2_3));
 
+        // initialize scene 3
         Scenario scene3 = new Scenario();
         scene3.text = "Scene 3";
+
+        // adding choices to scene 3
         scene3.addChoice(getString(R.string.choice3_1));
         scene3.addChoice(getString(R.string.choice3_2));
         scene3.addChoice(getString(R.string.choice3_3));
@@ -75,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         scenarios.add(scene2);
         scenarios.add(scene3);
 
+        // setting up recycler view for choices ui
         choiceAdapter = new ChoiceAdapter(this, scenarios.get(scenarioCount).choices);
         layoutManager = new LinearLayoutManager(this);
         listRecycler.setLayoutManager(layoutManager);
@@ -82,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         listRecycler.setAdapter(choiceAdapter);
         choiceAdapter.notifyDataSetChanged();
 
+        // set initial dialog
         mainDialog.setText(scenarios.get(scenarioCount).text);
     }
 

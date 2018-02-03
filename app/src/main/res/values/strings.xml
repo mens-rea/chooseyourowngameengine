@@ -1,9 +1,18 @@
 <resources>
     <string name="app_name">Ang himagsikan</string>
 
+    <string name="scenario1">\'Magandang gabi\' bati ng isang malaking lalaki.
+        Siya ay nakaupo sa harap ng pasukan patungo sa kweba.
+        Ikaw ay nasindak ngunit inabot ka ng isang
+        linggo upang makarating sa kweba na ito kung saan magaganap
+        ang inyong pagtitipon upang simulan ang himagsikan...</string>
+
     <string name="choice1_1">Unti unting umatras pabalik sa pinangalingan...</string>
     <string name="choice1_2">Tumakbo palayo! At umasang hindi ka pa niya nakikita</string>
     <string name="choice1_3">Batiin pabalik at isenyas ang sikretong senyas ng kapatiran</string>
+
+    <string name="scenario2">Nagulat din siya sa pagtakbo mo at pinutukan ka ng baril,
+        ito ay dumaplis sa iyong balikat ngunit ikaw ay nasaktan ng malubha</string>
 
     <string name="choice2_1">Choice 2.1</string>
     <string name="choice2_2">Choice 2.2</string>
