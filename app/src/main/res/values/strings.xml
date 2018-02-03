@@ -21,4 +21,6 @@
     <string name="choice3_1">Choice 3.1</string>
     <string name="choice3_2">Choice 3.2</string>
     <string name="choice3_3">Choice 3.3</string>
+
+    <string name="game_over">Game Over!</string>
 </resources>

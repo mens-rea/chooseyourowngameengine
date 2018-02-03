@@ -94,17 +94,24 @@ public class MainActivity extends AppCompatActivity {
         // do consequence here
         scenarioCount++;
 
-        // load new scenario
-        mainDialog.setText(scenarios.get(scenarioCount).text);
-
         // update player stats
 //        player.updatePlayer("health", -1, 10);
 
         // update UI
         playerHealth.setText("Buhay: "+ player.health +"/100");
 
-        // load new choices
-        choiceAdapter.setChoices(scenarios.get(scenarioCount).choices);
-        choiceAdapter.notifyDataSetChanged();
+        if(scenarioCount < scenarios.size()){
+            // load new scenario
+            mainDialog.setText(scenarios.get(scenarioCount).text);
+
+            // load new choices
+            choiceAdapter.setChoices(scenarios.get(scenarioCount).choices);
+            choiceAdapter.notifyDataSetChanged();
+        }
+        else{
+            mainDialog.setText(getString(R.string.game_over));
+            listRecycler.setVisibility(View.GONE);
+        }
+
     }
 }
